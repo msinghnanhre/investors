@@ -1,0 +1,52 @@
+[
+    {
+        "src": "../btc.svg",
+        "name": "BTC",
+        "color": "#B19676"
+    },
+    {
+        "src": "../eth.svg",
+        "name": "ETH",
+        "color": "#424344"
+    },
+    {
+        "src": "../xrp.svg",
+        "name": "XRP",
+        "color": "#565B60"
+    },
+    {
+        "src": "../usdc.svg",
+        "name": "USDT",
+        "color": "#568DC9"
+    },
+    {
+        "src": "../bnb.svg",
+        "name": "BNB",
+        "color": "#D2A30C"
+    },
+    {
+        "src": "../ada.svg",
+        "name": "ADA",
+        "color": "#9A9696"
+    },
+    {
+        "src": "../doge.svg",
+        "name": "DOGE",
+        "color": "#D0C475"
+    },
+    {
+        "src": "../usdc.svg",
+        "name": "USDC",
+        "color": "#2775CA"
+    },
+    {
+        "src": "../dot.svg",
+        "name": "DOT",
+        "color": "#E6007A"
+    },
+    {
+        "src": "../uni.svg",
+        "name": "UNI",
+        "color": "#FDF1F7"
+    }
+]

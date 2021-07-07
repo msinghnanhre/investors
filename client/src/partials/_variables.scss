@@ -1,0 +1,20 @@
+$desktop-size:1280px;
+$tablet-size:767px;
+$mobile-size:320px;
+
+$min-space: .25rem;
+$small-space: .5rem;
+$regular-space: 1rem;
+$medium-space: 2rem;
+$max-space: 2.5rem;
+
+//normal block sidespace
+$normal-block-sidespace:0 11.25rem;
+
+//tablet block sidespace
+$tablet-block-sidespace:0 1.5rem;
+
+//mobile block sidespace
+$mobile-block-sidespace:0 1rem;
+
+$googleIcon: url("../assets/icons/googleIcon.svg")

@@ -1,0 +1,44 @@
+@use './colors' as *;
+@use './variables' as *;
+
+@mixin tablet {
+    @media (min-width:$tablet-size) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width:$desktop-size) {
+        @content;
+    }
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    @content;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    @content;
+}
+
+//btn mixins 
+@mixin button($color) {
+    border: none;
+    background-color: $color;
+    border-radius: 5px;
+    margin: $min-space 0;
+    padding: $min-space;
+    height: 2.5rem;
+    font-weight: bold;
+    @content;
+}
+
+@mixin side-space{
+    @include tablet{
+        margin: $small-space $medium-space*2;
+    }
+}

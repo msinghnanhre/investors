@@ -1,0 +1,50 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/colors" as *;
+@use "../../partials/variables" as *;
+
+.header{
+    @include side-space;
+    @include flex-column{
+        justify-content: center;
+        align-items: center;
+
+        @include tablet{
+            @include tablet{
+                @include flex-row{
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    &__logo{
+        width: 15rem;
+        padding: $medium-space 0;
+    }
+    &__links{
+        @include flex-row{
+            width: 100%;
+            justify-content: space-evenly;
+
+            @include tablet{
+                @include flex-row{
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+            }
+        }
+        &-explore{
+            @include button($primary-btn-color){
+                width: 8rem;
+            }
+            @include tablet{
+                margin:0 $small-space;
+            }
+        }
+        &-portfolio{
+            @include button($secondary-btn-color){
+                width: 8rem;
+            }            
+        }
+    }
+}

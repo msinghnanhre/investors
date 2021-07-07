@@ -1,0 +1,25 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/colors" as *;
+@use "../../partials/variables" as *;
+
+.currencyCard{
+    @include side-space;
+    @include tablet{
+        @include flex-row{
+            
+        }
+    }
+    &__items{
+        @include flex-row{
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            };
+
+        width: 15rem;
+        height: 20rem;
+        border-radius: 5px;
+        margin: $medium-space 0;
+    }
+}
