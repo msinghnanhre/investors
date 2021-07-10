@@ -48,5 +48,25 @@
         "src": "../uni.svg",
         "name": "UNI",
         "color": "#FDF1F7"
+    },
+    {
+        "src": "../dai.svg",
+        "name": "DAI",
+        "color": "#E8CD96"
+    },
+    {
+        "src": "../xlm.svg",
+        "name": "XLM",
+        "color": "#6D6A62"
+    },
+    {
+        "src": "../etc.svg",
+        "name": "ETC",
+        "color": "#3CB93C"
+    },
+    {
+        "src": "../theta.svg",
+        "name": "THETA",
+        "color": "#2EA2A0"
     }
 ]

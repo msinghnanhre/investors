@@ -5,9 +5,11 @@
 
 .currencyCard{
     @include side-space;
+    box-sizing: border-box;
     @include tablet{
         @include flex-row{
-            
+            flex-wrap: wrap;
+            justify-content: space-evenly;
         }
     }
     &__items{
