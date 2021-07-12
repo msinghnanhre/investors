@@ -68,5 +68,20 @@
         "src": "../theta.svg",
         "name": "THETA",
         "color": "#2EA2A0"
+    },
+    {
+        "src": "../ltc.svg",
+        "name": "LTC",
+        "color": "#6580AD"
+    },
+    {
+        "src": "../solana.svg",
+        "name": "SOL",
+        "color": "#3CC9BE"
+    },
+    {
+        "default": "../solana.svg",
+        "name": "SOL",
+        "color": "#3CC9BE"
     }
 ]

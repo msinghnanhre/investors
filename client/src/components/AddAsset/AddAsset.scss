@@ -1,0 +1,29 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
+
+.addAsset{
+    @include flex-row{
+        justify-content:center;
+        align-items: center;
+        height: 30vh;
+    }
+    &__form{
+        border-radius: 10px;
+        &-input{
+            padding: $small-space;
+            border-radius: 10px 0 0 10px;
+            border: .25px solid #A79D7D;
+            width: 25rem;
+            height: 3rem;
+        }
+        &-submit{
+            padding: $small-space;
+            border-radius: 0px 10px 10px 0px;
+            border-left: none;
+            background-color: #F9AA4B;
+            border: none;
+            width: 7rem;
+            height: 3rem;
+        }
+    }
+}

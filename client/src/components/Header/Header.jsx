@@ -3,7 +3,8 @@ import logo from "../../assets/icons/logo2.svg"
 import "./Header.scss"
 import {Link} from "react-router-dom"
 
-function Header() {
+function Header({modalDisplay}) {
+
     return (
         <div className="header">
             <img className="header__logo" src={logo} alt="investors Logo" />
@@ -11,9 +12,7 @@ function Header() {
                 <Link to="/explore">
                     <button className="header__links-explore">Explore</button>
                 </Link>
-                <Link to="/portfolio">
-                    <button className="header__links-portfolio">Portfolio</button>
-                </Link>
+                <button className="header__links-portfolio" onClick={modalDisplay}>Portfolio</button>
             </section>
         </div>
     )

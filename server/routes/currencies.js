@@ -20,9 +20,9 @@ axios.get(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`,
 })
 
 //get list of top 10 currencies
-router.get('/currencyList', (req, res) => {
+router.get('/', (req, res) => {
     const page = Number(req.query.page)
-    const limit = 10
+    const limit = 5
 
     //start and end of page 
     const startIndex = (page - 1) * limit
@@ -47,15 +47,11 @@ router.get('/currencyList', (req, res) => {
     res.json(result)
 });
 
-router.post("/portfolio", async (req, res) => {
-    const newPortfolio = new Portfolio(req.body);
-    const savedPortfolio = await newPortfolio.save()
-    res.json(newPortfolio)
+
+//currency detail
+router.get('/detail/:id', (req, res) => {
+    
 })
 
-router.get('/portfolio',async (req, res) => {
-    const portfolio = await Portfolio.find();
-    res.json(portfolio)
-})
 
 module.exports = router

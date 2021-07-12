@@ -17,11 +17,31 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+            transform: scale(.95);
+            transition: all .5s ease-in;
             };
 
         width: 15rem;
         height: 20rem;
         border-radius: 5px;
         margin: $medium-space 0;
+        // &:hover{
+        //     transform: scale(1);
+        // }
     }
+
+    &__add{
+        position: relative;
+        top: -2.75rem;
+        left: 9rem;
+        display: block;
+    }
+}
+
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
 }

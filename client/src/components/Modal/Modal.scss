@@ -1,0 +1,67 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.modal {
+    position: fixed;
+    width:100%;
+    height: 100%;
+    z-index:9;
+    @include tablet{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index:9;
+    }
+    &__cancel{
+        position: relative;
+        top: 10rem;
+        left: 71.85%;
+        font-size:2.5rem;
+        background-color: rgba(0, 0, 0, 0.10);
+        border: 1p solid rgba(0, 0, 0, 0.4);
+        padding:0 $small-space;
+    }
+    
+    &__main {
+        position:fixed;
+        background: white;
+        width: 50%;
+        height: 100%;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+
+        @include tablet{
+            position:fixed;
+            height: auto;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+        }
+    }
+    
+
+    &__container{
+        height:100%;
+        @include flex-column;
+    }
+    &__btn{
+        border: none;
+        background-color: #4c8bf5;
+        color: white;
+        width: 100%;
+        padding: $medium-space ;
+        margin: 0;
+        border-radius: 10px;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+}
+
+
+
+
