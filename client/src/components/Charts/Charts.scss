@@ -1,0 +1,10 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/variables"  as *;
+
+.currencies{
+    @include side-space;
+    padding: 5rem 0;
+    &__select{
+        
+    }
+}

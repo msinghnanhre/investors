@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 body {
+  background-color: rgb(196, 196, 196, 0.5);
   margin: 0;
   font-family: "Lato",'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu';
@@ -12,9 +13,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   padding: 0;
+  color: #2e2913;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p{
+  line-height: 1.5rem;
+}
+h4, h5{
+  line-height: 1.5rem;
+
+}
+h5{
+  font-size: .875rem;
+}
+
+h2, h3{
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 1rem;
+    border-bottom: 5px solid #F9AA4B;
+    top: 1.5rem;
+    left: 0;
+  }
 }

@@ -1,16 +1,16 @@
 const express = require('express')
 const app = express()
+
+const session = require('express-session')
 const cors = require('cors')
 const axios = require('axios');
 const mongoose = require("mongoose")
-//passport
+
 const passport = require('passport');
-require('./Auth/passport')
+require('./passport')
 
 
 //routes 
-const currencyRoutes = require('./routes/currencies')
-const currencyIcons = require('./routes/currencyIcons')
 const portfolioRoutes = require("./routes/portfolio")
 const authRoutes = require("./routes/authRoutes")
 
@@ -34,19 +34,27 @@ db.once("open", () => {
 app.use(express.json())
 app.use(express.static("public"))
 app.use(cors({
-    origin: true,
-    credentials: true
+    origin: 'http://localhost:3000',
 }))
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+}))
+
+
 app.use(passport.initialize())
+app.use(passport.session())
+
 
 //endpoints 
-app.use('/api/currencyList', currencyRoutes)
-app.use('/api', currencyIcons)
-app.use('/api/portfolio', portfolioRoutes)
+app.use('/api', portfolioRoutes)
 app.use('/auth', authRoutes)
 
-
-
+// app.get('/auth/goole',
+//     passport.authenticate('google', { scope: ['email', 'profile'] })
+// )
 
 app.listen(port, () => {
     console.log(`Listening at port ${port}`)

@@ -26,14 +26,14 @@
 }
 
 //btn mixins 
-@mixin button($color) {
+@mixin button() {
     border: none;
-    background-color: $color;
     border-radius: 5px;
     margin: $min-space 0;
     padding: $min-space;
     height: 2.5rem;
     font-weight: bold;
+    width: 8rem;
     @content;
 }
 

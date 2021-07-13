@@ -1,0 +1,20 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/colors" as *;
+@use "../../partials/variables" as *;
+
+.footer{
+    @include side-space;
+    border-top: 1px solid #716431;
+    height: 25vh;
+    @include flex-row{
+        align-items: center;
+        justify-content: space-between;
+        }
+    &__title{
+        opacity: .5;
+    }
+    &__img{
+        margin-left: $medium-space
+    }
+}

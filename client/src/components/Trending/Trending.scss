@@ -1,0 +1,47 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/colors" as *;
+@use "../../partials/variables" as *;
+
+.trending{
+
+    &__section{
+        @include flex-row{
+            flex-wrap: wrap;
+            justify-content:flex-start;
+            gap: 1rem;
+        }
+    }
+        &__items{
+            box-shadow: 
+               inset  12px 12px 8px 0 rgba(0, 0, 0, 0.25),
+               inset -8px -10px 10px 0 #ffffff73;
+        @include flex-row{
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            transform: scale(.95);
+            transition: all .5s ease-in;
+            };
+
+        width: 15rem;
+        height: 20rem;
+        border-radius: 20px;
+        margin: $medium-space 0;
+        // &:hover{
+        //     transform: scale(1);
+        // }
+
+        &-text{
+            margin-left:$small-space*1.5;
+        }
+    }
+    &__img{
+        border-radius: 50%;
+        width: 70px;
+        padding: .5rem;
+        box-shadow: 
+                12px 12px 20px 0 rgba(0, 0, 0, 0.25),
+                -8px -10px 20px 0 rgba(255, 255, 255, 1);
+    }
+}

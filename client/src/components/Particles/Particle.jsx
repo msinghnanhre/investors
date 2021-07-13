@@ -5,21 +5,21 @@ function Particle() {
     return (
         <Particles
             params={{
-                "particles": {
+                particles: {
                     "number": {
                         "value": 50
                     },
                     line_linked: {
-                        color: "#c8c8c8",
-                        "opacity": 0.5,
+                        color: "#F9AA4B",
+                        width: "1.25",
                         shadow: {
                             blur: 5
                         }
                     },
-                    "color": {
+                    color: {
                         "value": ["#f2a900", "#3c3c3d", "#006097", "#333333"]
                     },
-                    "size": {
+                    size: {
                         "value": 3,
                         "random": true
                     }

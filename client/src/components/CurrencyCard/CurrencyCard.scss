@@ -3,9 +3,22 @@
 @use "../../partials/colors" as *;
 @use "../../partials/variables" as *;
 
-.currencyCard{
+
+
+.currency{
     @include side-space;
+
+    &Title{
+        font-size: 2rem;
+        margin: $max-space*2 0 $max-space 0;
+    }
+}
+
+.currencyCard{
     box-sizing: border-box;
+    height: 70vh;
+    overflow: scroll;
+
     @include tablet{
         @include flex-row{
             flex-wrap: wrap;
@@ -13,28 +26,57 @@
         }
     }
     &__items{
+            box-shadow: 
+                12px 12px 20px 0 rgba(0, 0, 0, 0.25),
+                -8px -8px 20px 0 #ffffff73;
         @include flex-row{
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
-            transform: scale(.95);
+            //transform: scale(.75);
             transition: all .5s ease-in;
             };
-
-        width: 15rem;
-        height: 20rem;
-        border-radius: 5px;
+        width: 25rem;
+        height: 8rem;
+        border-radius: 10px;
         margin: $medium-space 0;
         // &:hover{
         //     transform: scale(1);
         // }
+
+        &-text{
+            //width: 100%;
+            margin: $small-space;
+        }
     }
 
-    &__add{
+    &__img{
+        width: 15%;
+        height: auto;
+        margin: $medium-space $small-space;
+        padding: .5rem;
+        border-radius:50%;
+        box-shadow: 
+                12px 12px 20px 0 rgba(0, 0, 0, 0.25),
+                -8px -10px 15px 0 #ffffff73;
+    }
+    &__detail{
         position: relative;
-        top: -2.75rem;
-        left: 9rem;
-        display: block;
+        bottom: 3rem;
+        left: 23rem;
+        border: 1px solid #423913;
+        border-radius:50%;
+        box-shadow: 
+                12px 12px 20px 0 rgba(0, 0, 0, 0.25),
+                -8px -5px 15px 0 #ffffffde;
+    }
+
+
+    &__positive{
+        color: black;
+    }
+    &__negative{
+        color: red;
     }
 }
 

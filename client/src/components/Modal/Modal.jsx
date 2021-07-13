@@ -2,16 +2,12 @@ import React from 'react'
 import "./Modal.scss"
 import axios from 'axios'
 
+const API_URL = 'http://localhost:8080'
 
 function Modal({ modalClick }) {
     
     const login = () => {
-        axios.get('http://localhost:8080/auth/google')
-            .then(res => {
-            console.log(res)
-            }).catch(err => {
-            console.log(err)
-        })
+        window.location = `${API_URL}/auth/google`
     }
 
     return (

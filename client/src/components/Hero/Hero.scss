@@ -2,14 +2,13 @@
 @use "../../partials/variables" as *;
 
 .hero{
-    @include side-space;
     position: relative;
     width: 100%;
     height: 70vh;
     overflow: hidden;
     &__main{
         position: absolute;
-        top: 20%;
+        top: 30%;
         &-title{
             font-size: 3rem;
             width: 70%;
