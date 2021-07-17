@@ -2,28 +2,67 @@
 @use "../../partials/variables" as *;
 
 .addAsset{
-    @include flex-row{
+    @include flex-column{
         justify-content:center;
         align-items: center;
-        height: 30vh;
+    }
+    background: #d9a7c7;
+    background-image: linear-gradient(to right, #d9a7c7, #fffcdc);
+    background-size: 500%;
+    background-position: right;
+    transition: background-position 5s ;
+    animation: bg 5s infinite alternate;
+    padding: 5rem 0;
+
+
+    &__title{
+        font-size: 2.5rem;
+        color: #716431;
+        margin: 2rem 0 0 0;
     }
     &__form{
+        @include flex-column{
+            justify-content:center;
+            align-items: center;
+        }
         border-radius: 10px;
+        margin: 2rem 0 5rem 0;
+
         &-input{
             padding: $small-space;
-            border-radius: 10px 0 0 10px;
+            border-radius: 10px;
             border: .25px solid #A79D7D;
-            width: 25rem;
+            width: 35rem;
             height: 3rem;
+            margin: $small-space;
         }
         &-submit{
             padding: $small-space;
-            border-radius: 0px 10px 10px 0px;
-            border-left: none;
+            border-radius: 10px;
             background-color: #F9AA4B;
             border: none;
             width: 7rem;
             height: 3rem;
         }
     }
+}
+
+.valid, .error{
+    font-size: .75rem;
+    align-self: flex-start;
+    margin-left: .5rem;
+}
+.error{
+    color: red;
+    display: block;
+}
+
+.valid{
+    color: darkgray;
+    display: none;
+}
+
+@keyframes bg{
+    0%{background-position: right}
+    100%{background-position: left}
 }

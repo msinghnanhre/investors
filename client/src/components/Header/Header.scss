@@ -8,15 +8,15 @@
     @include flex-column{
         justify-content: center;
         align-items: center;
+    }
+    height: 10vh;
 
-        @include tablet{
-            @include tablet{
-                @include flex-row{
-                    justify-content: space-between;
-                }
-            }
+    @include tablet{
+        @include flex-row{
+            justify-content: space-between;
         }
     }
+
     &__logo{
         width: 15rem;
         padding: $medium-space 0;

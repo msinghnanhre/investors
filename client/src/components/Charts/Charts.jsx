@@ -17,7 +17,8 @@ function Charts({ currencies, id, publicInterest, sentimentUp, sentimentDown, sc
                 const timestamp = []
                 res.data.prices.map(item => {
                     price.push(item[1])
-                    timestamp.push(item[0])
+                    let time = new Date(item[0]).toLocaleDateString("en-us", { day: "2-digit", month: "2-digit", year: "numeric" })
+                    timestamp.push(time)
                 })
                 setData(price)
                 setLabel(timestamp)

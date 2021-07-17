@@ -1,0 +1,24 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/colors" as *;
+@use "../../partials/variables" as *;
+
+.dashboard{
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    &__value{
+        margin: 1.5rem 0 0 0;
+        font-weight: bold;
+    }
+    &__chart-text{
+        font-weight: bold;
+    }
+
+    &__profit{
+        color: green;
+    }
+    &__loss{
+        color: red;
+    }
+}

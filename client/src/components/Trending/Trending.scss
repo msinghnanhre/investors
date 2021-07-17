@@ -16,8 +16,8 @@
             box-shadow: 
                inset  12px 12px 8px 0 rgba(0, 0, 0, 0.25),
                inset -8px -10px 10px 0 #ffffff73;
-        @include flex-row{
-            justify-content: center;
+        @include flex-column{
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             transform: scale(.95);
@@ -26,6 +26,7 @@
 
         width: 15rem;
         height: 20rem;
+        padding: 0 2rem;
         border-radius: 20px;
         margin: $medium-space 0;
         // &:hover{
@@ -33,7 +34,7 @@
         // }
 
         &-text{
-            margin-left:$small-space*1.5;
+            height: 50%;
         }
     }
     &__img{
@@ -43,5 +44,10 @@
         box-shadow: 
                 12px 12px 20px 0 rgba(0, 0, 0, 0.25),
                 -8px -10px 20px 0 rgba(255, 255, 255, 1);
+        
+        &-container{
+            height: 50%;
+            padding-top: 2rem;
+        }
     }
 }

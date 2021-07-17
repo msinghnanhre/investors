@@ -4,17 +4,25 @@
 @use "../../partials/variables" as *;
 
 .footer{
-    @include side-space;
-    border-top: 1px solid #716431;
+    height: 20vh;
+    padding: 0 5rem;
     height: 25vh;
+    background-image: url(../../assets/icons/wave.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
     @include flex-row{
         align-items: center;
         justify-content: space-between;
         }
+
     &__title{
         opacity: .5;
     }
+
     &__img{
-        margin-left: $medium-space
+        //margin-left: $medium-space
     }
+
 }

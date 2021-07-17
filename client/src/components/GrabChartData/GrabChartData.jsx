@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Portfolio() {
+function GrabChartData() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function Portfolio() {
     )
 }
 
-export default Portfolio
+export default GrabChartData

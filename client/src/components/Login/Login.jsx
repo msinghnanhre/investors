@@ -1,30 +1,37 @@
 import React from 'react'
 import Particle from "../Particles/Particle"
 import "./Login.scss"
-import { Link } from "react-router-dom"
-import axios from "axios"
+import coins from "../../assets/images/coins.json"
+import Lottie from 'react-lottie';
+import logo from "../../assets/icons/logo2.svg"
+
+const API_URL = 'http://localhost:8080'
 
 function Login() {
+    const authLogin = () => {
+        window.location = `${API_URL}/auth/google`
+    }
 
+    const coinsAnimate = {
+        loop: true,
+        autoplay: true,
+        animationData: coins,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    }
     return (
         <div className="login">
-            <section className="login__main">
-                <form className="login__main-form">
-                    <div className="login__main-form--section">
-                        <label className="login__main-form--label" for="email">Email</label>
-                        <input className="login__main-form--input" type="text" name="email" placeholder="Enter Your Email"/>
-                    </div>
-                    <div className="login__main-form--section">
-                        <label className="login__main-form--label" for="password">Password</label>
-                        <input className="login__main-form--input" type="text" name="password" placeholder="Enter Your Password"/>
-                    </div>
-                    <div className="login__main-form--section">
-                        <button className="login__main-form--login" type="submit" >Log in</button>
-                        <button className="login__main-form--cancel">Cancel</button>
-                        <span className="login__main-form--span">OR</span>
-                        <button className="login__main-form--google">Sign Up</button>
-                    </div>
-                </form>
+            <section className="login__card">
+                <h1 className="login__title">Welcome to
+                    <img className="login__logo" src={logo} alt="investors logo" />
+                </h1>
+
+                <Lottie options={coinsAnimate} height={400} width={400} />
+                <p>Click here to access your portfolio details</p>
+                <button className="login__login" onClick={authLogin}>Log In with Google</button>
+                <p>Sign-Up with Google to start portfolio</p>
+                <button className="login__signup" onClick={authLogin}>Sign Up with Google</button>
             </section>
             <Particle />
         </div>

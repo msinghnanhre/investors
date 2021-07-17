@@ -5,8 +5,10 @@ const PortfolioSchema = new mongoose.Schema({
     portfolio: [
         {
             currencyName: String,
-            date: String,
-            value: Number
+            assetValue: Number,
+            date: Date,
+            valueInAsset: Number,
+            img: String
         }
     ],
 })

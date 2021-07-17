@@ -2,9 +2,10 @@ import { useParams } from 'react-router-dom'
 import { useState,useEffect } from "react";
 import Charts from "../Charts/Charts"
 import { coinDetail } from "../../utils/api"
-import PolarAreaChart from "../PolarAreaChart/PolarAreaChart"
 import Socials from "../Socials/Socials"
 import "./AssetDetail.scss"
+import Footer from "../../components/Footer/Footer"
+import Header from "../../components/Header/Header"
 
 function AssetDetail({ currencies }) {
 
@@ -32,15 +33,16 @@ function AssetDetail({ currencies }) {
             console.log(err)
         })
     }, [])
-    console.log(social)
 
     if (coin === null) {
-        return <p>Loading ...</p>
+        return <p>Loading ......</p>
     }
     return (
+        <>
+        <Header />
         <section className="assetDetail">
             <div className="assetDetail__coin">
-                <img className="assetDetail__img" src={coin.image.small} />
+                <img className="assetDetail__img" src={coin.image.small} alt="asset logo" />
                 <section className="assetDetail__items-text">
                     <h5>RANK: <span>{coin.market_cap_rank}</span></h5>
                     <p>CURRENCY: <span>{coin.name}</span></p>
@@ -61,7 +63,9 @@ function AssetDetail({ currencies }) {
                 social={social}
                 desc={description}
             />
-        </section>
+            </section>
+            <Footer />
+        </>
     )
 }
 
