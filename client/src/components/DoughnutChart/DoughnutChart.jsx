@@ -24,6 +24,7 @@ function DoughnutChart({ chartData }) {
             return item.image
         })
     }
+    
     console.log(chartData)
 
     return (

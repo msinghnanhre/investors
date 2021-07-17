@@ -78,3 +78,16 @@ export const deleteAsset = (id, assetId) => {
             })
      })
 }
+
+//post current Value every 5 miutes for chart data
+//post new asset to the database
+export const postCurrent = (id, data) => {
+    return new Promise((resolve, reject) => {
+        axios.post(`http://localhost:8080/api/portfolio/currentValue/${id}`, { data })
+            .then(res => {
+                resolve(res)
+            }).catch(err => {
+                reject(err)
+            })
+    })
+}

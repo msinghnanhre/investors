@@ -8,6 +8,7 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import arrowUp from "../../assets/icons/arrowUp.svg"
 import arrowDown from "../../assets/icons/arrowDown.svg"
+import Roadmap from "../Roadmap/Roadmap"
 
 function CurrencyCard({ currencyList }){
     return (
@@ -44,6 +45,7 @@ function CurrencyCard({ currencyList }){
                     ) 
                 })}
                 </div>
+                <Roadmap />
             </section>
             <Footer />
         </>

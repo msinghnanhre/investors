@@ -11,6 +11,9 @@ const PortfolioSchema = new mongoose.Schema({
             img: String
         }
     ],
+    chartData: [{
+        currentValue: Number
+    }]
 })
 
 module.exports = mongoose.model('Portfolio', PortfolioSchema)

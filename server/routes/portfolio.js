@@ -62,6 +62,33 @@ router.get('/portfolio/:id', (req, res) => {
 })
 
 
+//post current portfolio value to database every five minutes for testing purposes
+// post new asset by Id
+router.post("/portfolio/currentValue/:id", (req, res) => {
+    const { current } = req.body
+    console.log(req.body)
+    const { id } = req.params
+
+    let newValue = {
+        currentValue: current
+    }
+
+    Portfolio.findOneAndUpdate(
+        { googleId: id },
+        {
+            $push: {
+                chartData: newValue
+            }
+        },
+        function (error, success) {
+            if (error) {
+                res.status(401).send("Something Went Wrong");
+            } else {
+                res.status(200).json("Successfully Added");
+            }
+        });
+})
+
 
 
 module.exports = router
