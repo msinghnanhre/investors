@@ -8,15 +8,16 @@ function Dashboard({ userData }) {
     const {id} = useParams()
 
 
-    // setInterval(() => {
-    //     if (currentValue !== 0) {
-    //         postCurrent(id, { current: currentValue })
-    //             .then(res => {
-    //             console.log(res)
-    //             }).catch(err => {
-    //             console.log(err)
-    //         })
-    // }}, 5000)
+    setInterval(() => {
+        if (currentValue !== 0) {
+            postCurrent(id, { current: currentValue })
+                .then(res => {
+                console.log(res)
+                }).catch(err => {
+                console.log(err)
+            })
+        }
+    }, 3655500)
 
     return (
         <div className="dashboard">

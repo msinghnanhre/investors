@@ -33,8 +33,6 @@ function Socials({ social, desc }) {
                         
                         <p>Reddit Subscribers: <span>{social.reddit_subscribers}</span></p>
                     </div>
-                    
-
                 </div>
             </section>
         </div>

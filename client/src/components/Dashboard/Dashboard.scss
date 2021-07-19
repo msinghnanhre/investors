@@ -4,15 +4,11 @@
 @use "../../partials/variables" as *;
 
 .dashboard{
-    padding: 1rem;
     position: relative;
     width: 100%;
+    margin-bottom: 3rem;
     &__value{
         margin: 1.5rem 0 0 0;
-        font-weight: bold;
-    }
-    &__chart-text{
-        font-weight: bold;
     }
 
     &__profit{

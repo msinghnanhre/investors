@@ -10,7 +10,8 @@ import arrowUp from "../../assets/icons/arrowUp.svg"
 import arrowDown from "../../assets/icons/arrowDown.svg"
 import Roadmap from "../Roadmap/Roadmap"
 
-function CurrencyCard({ currencyList }){
+function CurrencyCard({ currencyList }) {
+
     return (
         <>
             <Header />

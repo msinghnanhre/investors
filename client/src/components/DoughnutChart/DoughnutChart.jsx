@@ -1,5 +1,5 @@
 import React from 'react'
-import { Doughnut, PolarArea } from "react-chartjs-2"
+import { Doughnut } from "react-chartjs-2"
 import Dashboard from "../Dashboard/Dashboard"
 import "./DoughnutChart.scss"
 
@@ -16,12 +16,6 @@ function DoughnutChart({ chartData }) {
     const values = () => {
         return chartData.map(item => {
             return item.current_price* item.valueInAsset
-        })
-    }
-
-    const background = () => {
-        return chartData.map(item => {
-            return item.image
         })
     }
     

@@ -5,10 +5,8 @@
 
 .roadmap{
     margin: 5rem auto;
-    // @include flex-row{
-    //     justify-content: center;
-    // }
     width: 100%;
+
     &__title{
         font-size: 1.5rem;
     }
@@ -17,15 +15,13 @@
         margin-top: 4rem;
         @include flex-row{
             justify-content:center;
-            //width: 100%;
         }
         margin-left: 18rem;
     }
     &__left{
         width: 2.5px;
-        height: 400px;
-        background-color: rgb(31, 31, 211);
-        
+        height: 450px;
+        background-color: rgb(31, 31, 211);      
     }
 
     &__right{
@@ -33,7 +29,7 @@
         text-align: center;
         &-right{
             position: relative;
-            height: 6vh;
+            height: 75px;
             &::before{
                 content: "";
                 position: absolute;
@@ -50,7 +46,7 @@
         }
         &-left{
             right: 22rem;
-            height: 6vh;
+            height: 75px;
             position: relative;
             
             &::after{
@@ -65,7 +61,6 @@
                 transform: translatey(-55%);
                 
             }
-
         }
     }
 }

@@ -8,22 +8,24 @@ import "./PortfolioList.scss"
 
 function PortfolioList({userId, currencies}) {
   const [assets, setAssets] = useState([])
+  const [isDeleted, setIsDeleted] = useState(false)
   const [chartData, setChartData] = useState([])
   let chartD = []
   
-
+  
   useEffect(async () => {
         const portfolioAssets = await getPortfolio(userId);
         setAssets(portfolioAssets.data)
-  }, [])
+  }, [isDeleted])
 
   const deleteItem = (userId, assetId) => {
-
-    deleteAsset(userId, assetId).then(res => {
-      console.log(res)
+    deleteAsset(userId, assetId)
+      .then(res => {
+        console.log(res)
     }).catch(err => {
-      console.log(err)
+        console.log(err)
     })
+    setIsDeleted(true)
   }
   
     if (assets=== []) {
@@ -42,10 +44,10 @@ function PortfolioList({userId, currencies}) {
         
                             <section className="portfolioList__items-text">
                                 <p>Coin: <span>{item.currencyName}</span></p>
-                          <p>No. of Coins: <span>{item.valueInAsset.toFixed(2)}</span></p>
+                                <p>No. of Coins: <span>{item.valueInAsset.toFixed(2)}</span></p>
       
-                                    {currencies.map(asset => {
-                                      if (asset.id === item.currencyName) {
+                          {currencies.map(asset => {
+                            if (asset.id === item.currencyName.replace((/ /g, "-"))) {
                                         chartD.push({
                                           ...asset,
                                           valueInAsset: item.valueInAsset,
@@ -60,8 +62,7 @@ function PortfolioList({userId, currencies}) {
                                                 </span>
                                                 </>
                                             )
-                                      }
-                                      
+                                        }                                      
                                     })}
                         </section>
                       </section>

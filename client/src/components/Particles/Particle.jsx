@@ -7,11 +7,11 @@ function Particle() {
             params={{
                 particles: {
                     "number": {
-                        "value": 50
+                        "value": 60
                     },
                     line_linked: {
                         color: "#F9AA4B",
-                        width: "1.25",
+                        width: "1",
                         shadow: {
                             blur: 5
                         }

@@ -10,7 +10,7 @@ const API_URL = 'http://localhost:8080'
 
 function Portfolio(props) {
     const { id } = useParams(props)
-    const [addedCoin, setAddedCoin] = useState(null)
+    const [addedCoin, setAddedCoin] = useState(false)
 
     let savedId = null;
     useEffect(() => {
@@ -18,15 +18,17 @@ function Portfolio(props) {
         if (!savedId) {
             sessionStorage.setItem('userId', id);
         }
+        console.log(addedCoin)
         setAddedCoin(false)
     }, [addedCoin])
 
     const logout = () => {
-        window.location = `${API_URL}/portfolio/logout`
+        window.location = `${API_URL}/api/portfolio/logout`
     }
 
     const renderComponent = () => {
         setAddedCoin(true)
+        console.log(addedCoin)
     }
 
     if (!id) {
@@ -40,13 +42,15 @@ function Portfolio(props) {
                 <AddAsset
                     userId={id}
                     renderComponent={renderComponent}
+                    props={props}
+                    userId={id}
                 />
                 <button onClick={logout}>Log out</button>
             </div>
-            <PortfolioList
-                userId={id}
-                currencies={props.currencyList}
-            />
+                <PortfolioList
+                    userId={id}
+                    currencies={props.currencyList}
+                />
             <Footer />
             </>
         )

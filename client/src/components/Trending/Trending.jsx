@@ -19,7 +19,6 @@ function Trending() {
         return <p>Loading ...</p>
     }
 
-    console.log(trendingList)
     return (
         <div className="trending">
             <h2 className="trending__title">Top Trending Today</h2>

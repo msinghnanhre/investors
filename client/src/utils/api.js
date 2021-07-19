@@ -27,7 +27,6 @@ export const coinDetail = (id) => {
     })
 }
 
-
 //top trending from coingecko 
 export const trending = () => {
     return new Promise((resolve, reject) => {
@@ -83,7 +82,7 @@ export const deleteAsset = (id, assetId) => {
 //post new asset to the database
 export const postCurrent = (id, data) => {
     return new Promise((resolve, reject) => {
-        axios.post(`http://localhost:8080/api/portfolio/currentValue/${id}`, { data })
+        axios.post(`http://localhost:8080/api/portfolio/currentValue/${id}`,{ data })
             .then(res => {
                 resolve(res)
             }).catch(err => {

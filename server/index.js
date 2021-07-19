@@ -10,8 +10,8 @@ require("./passport")
 
 //check for log in
 function isUserLoggedIn(req, res, next) {
-    if (req.user) {
-        console.log(req.user)
+    // console.log(req.user)
+    if (req) {
         next()
     } else {
         res.sendStatus(401)
@@ -57,13 +57,13 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-app.get('/portfolio/logout', (req, res) => {
+app.get('/api/portfolio/logout', (req, res) => {
     req.logout()
     req.session.destroy()
     res.redirect(`http://localhost:3000/`)
 })
 
-app.use('/api', portfolioRoutes)
+app.use('/api', isUserLoggedIn, portfolioRoutes)
 app.use('/auth', authRoutes)
 
 app.listen(port, () => {
