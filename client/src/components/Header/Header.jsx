@@ -3,8 +3,10 @@ import logo from "../../assets/icons/logo2.svg"
 import "./Header.scss"
 import {Link} from "react-router-dom"
 
-function Header() {
+function Header({path}) {
     const portfolioId = sessionStorage.getItem('userId') 
+
+    console.log(path)
 
     if (!portfolioId) {
         return <p>Loading .....</p>
@@ -14,10 +16,10 @@ function Header() {
             <img className="header__logo" src={logo} alt="investors Logo" />
             <section className="header__links">
                 <Link to="/explore">
-                    <button className="header__links-explore">Explore</button>
+                    <button className={path.path === "/explore" || path.path === "/:id/detail"? "header__links-active" : "header__links-notActive"}>Explore</button>
                 </Link>
                 <Link to={`/portfolio/${portfolioId}`}>
-                    <button className="header__links-portfolio">Portfolio</button>
+                    <button className={path.path === "/explore" || path.path === "/:id/detail" ? "header__links-notActive": "header__links-active"}>Portfolio</button>
                 </Link>
             </section>
         </div>

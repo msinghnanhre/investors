@@ -15,7 +15,7 @@ function DoughnutChart({ chartData }) {
     }
     const values = () => {
         return chartData.map(item => {
-            return item.current_price* item.valueInAsset
+            return item.current_price*item.valueInAsset
         })
     }
     
@@ -29,7 +29,6 @@ function DoughnutChart({ chartData }) {
                     data={{
                         labels: labels(),
                         datasets: [{
-                            label: "# of votes",
                             data: values(),
                             backgroundColor: [
                                 'rgba(255, 99, 132, 1)',
@@ -52,7 +51,6 @@ function DoughnutChart({ chartData }) {
                         maintainAspectRatio: true
                     }}
                 />
-
             </div>
         </div>
     )

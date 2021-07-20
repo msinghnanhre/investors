@@ -33,7 +33,7 @@
                 }
             }
         }
-        &-explore{
+        &-active{
             @include button;
             background-color: $primary-btn-color;
        
@@ -47,9 +47,8 @@
                 box-shadow:  inset 2px 2px 5px 0 rgba(0, 0, 0, 0.25),
                 inset -2px -2px 5px 0 #ffffff73;
             }
-
         }
-        &-portfolio{
+        &-notActive{
             @include button;
             background-color: $secondary-btn-color;
 

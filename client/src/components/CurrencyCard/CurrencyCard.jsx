@@ -10,11 +10,11 @@ import arrowUp from "../../assets/icons/arrowUp.svg"
 import arrowDown from "../../assets/icons/arrowDown.svg"
 import Roadmap from "../Roadmap/Roadmap"
 
-function CurrencyCard({ currencyList }) {
-
+function CurrencyCard({ currencyList, match }) {
+    console.log(match)
     return (
         <>
-            <Header />
+            <Header path={match}/>
             <section className="currency">
                 <Hero />
                 <Trending />

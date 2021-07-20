@@ -12,6 +12,7 @@ function PortfolioList({userId, currencies}) {
   const [chartData, setChartData] = useState([])
   let chartD = []
   
+  console.log(currencies)
   
   useEffect(async () => {
         const portfolioAssets = await getPortfolio(userId);

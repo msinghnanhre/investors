@@ -9,9 +9,12 @@ function Charts({ currencies, id, publicInterest, sentimentUp, sentimentDown, sc
     const [currencyId, setCurrencyId] = useState(id)
     const [data, setData] = useState([])
     const [label, setLabel] = useState([])
+    const [duration, setDuration] = useState(7)
+
+    const durationRef = useRef()
 
     useEffect(() => {
-        getChartData(currencyId)
+        getChartData(currencyId, duration)
             .then(res => {
                 const price = []
                 const timestamp = []
@@ -26,13 +29,26 @@ function Charts({ currencies, id, publicInterest, sentimentUp, sentimentDown, sc
             .catch(err => console.log(err))
     }, [currencyId])
     
+    const onChange = () => {
+        setDuration(durationRef.current.value)
+        console.log(duration)
+    }
 
-    if (!data && !label) {
+    if (!data && !label || duration === 0) {
         return <p>Loading...</p>
     }
     return (
         <div className="currencies">
+            <form className="currencies__form">
+                <input type="radio" name="duration" id="day" value="1" ref={durationRef} onChange={onChange}/>
+                <label for="day">1 Day</label>
+                <input type="radio" name="duration" id="week" value="7" ref={durationRef} onChange={onChange}/>
+                <label for="week">7 Days</label>
+                <input type="radio" name="duration" id="month" value="30" ref={durationRef} onChange={onChange}/>
+                <label for="month">30 Days</label>
+            </form>
             <BarChart
+                duration={duration}
                 data={data}
                 label={label}
             />

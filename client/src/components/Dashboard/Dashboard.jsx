@@ -2,6 +2,8 @@ import "./Dashboard.scss"
 import { postCurrent } from "../../utils/api"
 import {useParams} from "react-router-dom"
 
+const API_URL = 'http://localhost:8080'
+
 function Dashboard({ userData }) {
     let currentValue = 0;
     let prevValue = 0;
@@ -19,9 +21,17 @@ function Dashboard({ userData }) {
         }
     }, 3655500)
 
+    const logout = () => {
+        window.location = `${API_URL}/api/portfolio/logout`
+    }
+
     return (
         <div className="dashboard">
-            <h2 className="dashboard__title">DASHBOARD</h2>
+            <section className="dashboard__top">
+                <h2 className="dashboard__title">DASHBOARD</h2>
+                <button className="dashboard__logout" onClick={logout}>Log out</button>
+            </section>
+
             {
                 userData.map(item => {
                     currentValue += item.valueInAsset * item.current_price

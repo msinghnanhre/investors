@@ -2,9 +2,9 @@ import axios from "axios"
 
 
 //api to grab data for chart from asset id
-export const getChartData = (id) => {
+export const getChartData = (id, duration) => {
     return new Promise((resolve, reject) => {
-        axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7`)
+        axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${duration}`)
             .then(res => {
             resolve(res)
             })

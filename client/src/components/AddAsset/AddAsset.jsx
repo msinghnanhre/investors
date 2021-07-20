@@ -16,11 +16,6 @@ function AddAsset({userId, renderComponent, props}) {
         setAsset(assetRef.current.value)
         setValue(valueRef.current.value)
     }
-    
-    // useEffect(() => {
-    //     assetRef.current.value = ""
-    //     valueRef.current.value = ""
-    // }, [isAdded])
 
     const submitHandler = (e) => {
         e.preventDefault()

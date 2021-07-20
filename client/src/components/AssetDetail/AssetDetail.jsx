@@ -7,8 +7,9 @@ import "./AssetDetail.scss"
 import Footer from "../../components/Footer/Footer"
 import Header from "../../components/Header/Header"
 
-function AssetDetail({ currencies }) {
+function AssetDetail({ currencies, match }) {
 
+    console.log(match)
     const { id } = useParams()
     const [coin, setCoin] = useState(null)
     const [sentimentDown, setSentimentDown] = useState(0)
@@ -39,7 +40,7 @@ function AssetDetail({ currencies }) {
     }
     return (
         <>
-        <Header />
+            <Header path={match}/>
         <section className="assetDetail">
             <div className="assetDetail__coin">
                 <img className="assetDetail__img" src={coin.image.small} alt="asset logo" />

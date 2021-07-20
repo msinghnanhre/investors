@@ -8,7 +8,7 @@ import PortfolioList from "../PortfolioList/PortfolioList"
 
 const API_URL = 'http://localhost:8080'
 
-function Portfolio(props) {
+function Portfolio({props, match, currencyList}) {
     const { id } = useParams(props)
     const [addedCoin, setAddedCoin] = useState(false)
 
@@ -22,9 +22,6 @@ function Portfolio(props) {
         setAddedCoin(false)
     }, [addedCoin])
 
-    const logout = () => {
-        window.location = `${API_URL}/api/portfolio/logout`
-    }
 
     const renderComponent = () => {
         setAddedCoin(true)
@@ -37,7 +34,7 @@ function Portfolio(props) {
 
     return (
             <>
-            <Header />
+            <Header path={match} />
             <div>
                 <AddAsset
                     userId={id}
@@ -45,11 +42,10 @@ function Portfolio(props) {
                     props={props}
                     userId={id}
                 />
-                <button onClick={logout}>Log out</button>
             </div>
                 <PortfolioList
                     userId={id}
-                    currencies={props.currencyList}
+                    currencies={currencyList}
                 />
             <Footer />
             </>

@@ -24,9 +24,7 @@ function App() {
 
     return (
       <BrowserRouter>
-        
         <Switch>
-
           <Route path="/explore" render={routeProps => {
             return <CurrencyCard
               {...routeProps}
@@ -47,7 +45,6 @@ function App() {
           }} />
           <Route exact path="/" component={Login} />
         </Switch>
-  
       </BrowserRouter>
     );
 }
