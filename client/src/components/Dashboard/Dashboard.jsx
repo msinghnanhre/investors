@@ -33,7 +33,7 @@ function Dashboard({ userData }) {
             </section>
 
             {
-                userData.map(item => {
+                userData.forEach(item => {
                     currentValue += item.valueInAsset * item.current_price
                     prevValue += item.assetValue
                 })

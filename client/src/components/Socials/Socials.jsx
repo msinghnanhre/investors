@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Socials.scss"
-import twitter from "../../assets/icons/twitter.svg"
-import reddit from "../../assets/icons/reddit.svg"
+import block from "../../assets/icons/block.svg"
 
-function Socials({ social, desc }) {
+
+function Socials({ social, desc, coin }) {
     if (!social) {
         return <p>Loading ...</p>
     }
@@ -14,24 +14,18 @@ function Socials({ social, desc }) {
             <section className="socials__section">
                 <div className="socials__left">
                     <h5 className="socials__left-title">Description</h5>
-                    <p className="socials__left-body">{desc}</p>
+                    <p className="socials__left-body">{desc ? desc: "Visit the website mentioned under social for additional information"}</p>
                 </div>
                 <div className="socials__right">
-                    <h5 className="socials__right-title">Socials</h5>
-                    <div className="socials__twitter">
-                        <img src={twitter} alt="Twitter icon" />
-                        <h4>
-                            Twitter
-                        </h4>
-                        <p>Followers: <span>{social.twitter_followers}</span></p>
+                    <h5 className="socials__right-title">Socials Links</h5>
+                    <div className="socials__homepage">
+                        <img src={coin.image.small} alt="Twitter icon" />
+                        <p><a href={social.homepage[0]}>Official Website</a></p>
                     </div>
-                    <div className="socials__reddit">
-                        <img src={reddit} alt="Reddit icon" />
-                        <h4>
-                            Reddit
-                        </h4>
+                    <div className="socials__block">
+                        <img src={block} alt="Reddit icon" />
                         
-                        <p>Reddit Subscribers: <span>{social.reddit_subscribers}</span></p>
+                        <p><a href={social.blockchain_site[0]}>BlockChain Explorer</a></p>
                     </div>
                 </div>
             </section>

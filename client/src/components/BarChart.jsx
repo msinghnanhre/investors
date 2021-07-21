@@ -13,7 +13,7 @@ function BarChart({ data, label }) {
                 data={{
                     labels: label,
                     datasets: [{
-                        label: "Price Action over last 7 days",
+                        label: "Price Action",
                         data: data,
                         backgroundColor: [
                             'rgba(255, 99, 132, 1)'

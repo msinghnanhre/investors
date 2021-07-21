@@ -5,8 +5,7 @@ import "./DoughnutChart.scss"
 
 
 function DoughnutChart({ chartData }) {
-    let currentValue = 0;
-    let prevValue = 0;
+
     
     const labels = () => {
         return chartData.map(item => {
@@ -18,8 +17,6 @@ function DoughnutChart({ chartData }) {
             return item.current_price*item.valueInAsset
         })
     }
-    
-    console.log(chartData)
 
     return (
         <div className="doughnutChart">

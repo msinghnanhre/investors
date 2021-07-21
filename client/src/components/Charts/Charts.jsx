@@ -4,7 +4,8 @@ import BarChart from '../BarChart'
 import { getChartData } from "../../utils/api"
 import PolarAreaChart from "../PolarAreaChart/PolarAreaChart"
 
-function Charts({ currencies, id, publicInterest, sentimentUp, sentimentDown, score}) {
+
+function Charts({  id, publicInterest, sentimentUp, sentimentDown, score}) {
     
     const [currencyId, setCurrencyId] = useState(id)
     const [data, setData] = useState([])
@@ -20,32 +21,31 @@ function Charts({ currencies, id, publicInterest, sentimentUp, sentimentDown, sc
                 const timestamp = []
                 res.data.prices.map(item => {
                     price.push(item[1])
-                    let time = new Date(item[0]).toLocaleDateString("en-us", { day: "2-digit", month: "2-digit", year: "numeric" })
+                    let time = new Date(item[0]).toLocaleDateString("en-us", { day: "2-digit", month:"2-digit", hour: "2-digit"})
                     timestamp.push(time)
                 })
                 setData(price)
                 setLabel(timestamp)
             })
             .catch(err => console.log(err))
-    }, [currencyId])
+    }, [currencyId, duration])
     
     const onChange = () => {
         setDuration(durationRef.current.value)
-        console.log(duration)
     }
 
-    if (!data && !label || duration === 0) {
+    if (!data && !label) {
         return <p>Loading...</p>
     }
     return (
         <div className="currencies">
-            <form className="currencies__form">
-                <input type="radio" name="duration" id="day" value="1" ref={durationRef} onChange={onChange}/>
-                <label for="day">1 Day</label>
-                <input type="radio" name="duration" id="week" value="7" ref={durationRef} onChange={onChange}/>
-                <label for="week">7 Days</label>
-                <input type="radio" name="duration" id="month" value="30" ref={durationRef} onChange={onChange}/>
-                <label for="month">30 Days</label>
+            <form className="currencies__form" >
+                <label htmlFor="cars">Choose Duration</label>
+                <select ref={durationRef} onChange={onChange} defaultValue="7">
+                    <option value="1">1 Day</option>
+                    <option value="7">7 Day</option>
+                    <option value="30">30 Day</option>
+                </select>
             </form>
             <BarChart
                 duration={duration}

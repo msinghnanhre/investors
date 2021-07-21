@@ -1,12 +1,10 @@
-import {useState}from 'react'
+
 import logo from "../../assets/icons/logo2.svg"
 import "./Header.scss"
 import {Link} from "react-router-dom"
 
 function Header({path}) {
     const portfolioId = sessionStorage.getItem('userId') 
-
-    console.log(path)
 
     if (!portfolioId) {
         return <p>Loading .....</p>

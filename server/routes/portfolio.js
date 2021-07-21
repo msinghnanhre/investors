@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Portfolio = require('../models/Portfolio')
+const SubscriptionModel = require('../models/Subscription')
 
 
 // post new asset by Id
@@ -89,6 +90,25 @@ router.post("/portfolio/currentValue/:id", (req, res) => {
         });
 })
 
+
+// post new asset by Id
+router.post("/subscription/:id", (req, res) => {
+    const { id, email } = req.body
+
+    let newAssetObj = {
+        googleId: id,
+        email: email
+    }
+
+    SubscriptionModel.create(newAssetObj,
+        function (error, success) {
+            if (error) {
+                res.status(401).send("Something Went Wrong");
+            } else {
+                res.status(200).json("Successfully Added");
+            }
+        });
+})
 
 
 module.exports = router

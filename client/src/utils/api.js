@@ -1,6 +1,5 @@
 import axios from "axios"
 
-
 //api to grab data for chart from asset id
 export const getChartData = (id, duration) => {
     return new Promise((resolve, reject) => {
@@ -9,6 +8,18 @@ export const getChartData = (id, duration) => {
             resolve(res)
             })
             .catch(err => {
+            reject(err)
+        })
+    })
+}
+
+//latest events happening
+export const latestEvents = () => {
+    return new Promise((resolve, reject) => {
+        axios.get("https://api.coingecko.com/api/v3/events")
+            .then(res => {
+            resolve(res)
+            }).catch(err => {
             reject(err)
         })
     })
@@ -83,6 +94,19 @@ export const deleteAsset = (id, assetId) => {
 export const postCurrent = (id, data) => {
     return new Promise((resolve, reject) => {
         axios.post(`http://localhost:8080/api/portfolio/currentValue/${id}`,{ data })
+            .then(res => {
+                resolve(res)
+            }).catch(err => {
+                reject(err)
+            })
+    })
+}
+
+//post sibscription email
+//post new asset to the database
+export const postSubscription = (id, data) => {
+    return new Promise((resolve, reject) => {
+        axios.post(`http://localhost:8080/api/subscription/${id}`, data )
             .then(res => {
                 resolve(res)
             }).catch(err => {

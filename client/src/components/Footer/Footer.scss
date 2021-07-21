@@ -4,7 +4,6 @@
 @use "../../partials/variables" as *;
 
 .footer{
-    height: 20vh;
     padding: 0 5rem;
     height: 25vh;
     background-image: url(../../assets/icons/wave.svg);
@@ -20,9 +19,4 @@
     &__title{
         opacity: .5;
     }
-
-    &__img{
-        //margin-left: $medium-space
-    }
-
 }

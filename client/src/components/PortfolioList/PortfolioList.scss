@@ -6,13 +6,32 @@
 
 
 .portfolioList{
+    margin: 0 auto;
+    width: 100%;
+    @include tablet{
+        @include flex-row{
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
     @include side-space;
     box-sizing: border-box;
     overflow: scroll;
     position: relative;
     padding: 5rem 0;
     width: 90%;
-    min-height: 60vh;
+    min-height: 600px;
+
+    &__addAsset{
+        width: 100%;
+        padding-bottom: 5rem;
+        margin-top: -2rem;
+    }
+
+    &__Itemswrapper{
+        width: 50%;
+    }
 
     &__profit{
         color: green;
@@ -34,7 +53,6 @@
     }
 
     &__items{
-        //perspective: 500px;
             box-shadow: 
                 12px 12px 20px 0 rgba(0, 0, 0, 0.25),
                 -8px -8px 20px 0 #ffffff73;
@@ -45,13 +63,15 @@
             transition: all .5s ease-in;
             };
 
-        width: 45%;
         min-height: 8rem;
         border-radius: 10px;
         margin: $medium-space $medium-space;
 
         &-text{
             margin: $small-space;
+        }
+        &-span{
+            text-transform: uppercase;
         }
         // &:hover{
         //     transform: rotateY(90deg) rotateX(15deg) scale(1.1);
@@ -93,13 +113,12 @@
         font-weight: normal;
     }
     &__charts{
-        position: absolute;
-        width: 40%;
-        top: 7rem;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        width: 45%;
         border-radius: 10px;
-        right: 2rem;
-                box-shadow: 
-                12px 12px 20px 0 rgba(0, 0, 0, 0.25),
-                -8px -5px 15px 0 #ffffffde;
+        box-shadow: 
+            12px 12px 20px 0 rgba(0, 0, 0, 0.25),
+            -8px -5px 15px 0 #ffffffde;
     }
 }

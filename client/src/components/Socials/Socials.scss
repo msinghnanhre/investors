@@ -37,19 +37,17 @@
         height: 200px;
         overflow: scroll;
     }
-    &__twitter, &__reddit{
+    &__homepage, &__block{
         padding: $small-space;
-        border-radius: 10px;
         margin: $small-space 0;
         width: 100%;
     }
 
-    &__twitter{
-        // background-color: rgba(85, 172, 238, 0.45);
+    &__homepage{
         border-bottom: 5px solid rgba(85, 172, 238, 0.45);
     }
-    &__reddit{
+    &__block{
         border-bottom: 5px solid rgba(255, 69, 0, 0.75);
-        // background-color: rgba(255, 69, 0, 0.75);
     }
+
 }

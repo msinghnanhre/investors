@@ -18,6 +18,7 @@ function Trending() {
     if (!trendingList) {
         return <p>Loading ...</p>
     }
+    console.log(trendingList)
 
     return (
         <div className="trending">
@@ -30,13 +31,13 @@ function Trending() {
                             className="trending__items"
                         >
                             <div className="trending__img-container">
-                                <img className="trending__img" src={item.item.small} />
+                                <img className="trending__img" src={item.item.small} alt="Asset logo"/>
                             </div>
                             
                             <section className="trending__items-text">
                                 <h5 className="trending__rank">RANK: <span>{item.item.market_cap_rank}</span></h5>
                                 <p className="trending__currency">CURRENCY: <span>{item.item.name}</span></p>
-                                <p className="trending__price">PRICE: <span>${item.item.price_btc.toFixed(6)}</span></p>
+                                <p className="trending__price">PRICE : <span>${item.item.price_btc.toFixed(6)} BTC</span></p>
                             </section>
                         </section>
                     )

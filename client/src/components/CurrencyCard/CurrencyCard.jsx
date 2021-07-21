@@ -1,4 +1,4 @@
-
+import Events from "../Events/Events"
 import "./CurrencyCard.scss"
 import { Link } from "react-router-dom"
 import Hero from "../Hero/Hero"
@@ -11,7 +11,7 @@ import arrowDown from "../../assets/icons/arrowDown.svg"
 import Roadmap from "../Roadmap/Roadmap"
 
 function CurrencyCard({ currencyList, match }) {
-    console.log(match)
+
     return (
         <>
             <Header path={match}/>
@@ -38,7 +38,7 @@ function CurrencyCard({ currencyList, match }) {
                                         {  item.price_change_percentage_24h.toFixed(2)} %
                                     </span>
                                     <span className="currencyCard__priceChange-img">
-                                        <img src={item.price_change_percentage_24h > 0 ? arrowUp: arrowDown } />
+                                        <img src={item.price_change_percentage_24h > 0 ? arrowUp: arrowDown } alt="Price action icon"/>
                                     </span>
                                 </span>
                             </section>
@@ -46,6 +46,7 @@ function CurrencyCard({ currencyList, match }) {
                     ) 
                 })}
                 </div>
+                <Events />
                 <Roadmap />
             </section>
             <Footer />

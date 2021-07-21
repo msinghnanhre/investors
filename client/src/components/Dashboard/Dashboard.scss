@@ -7,6 +7,7 @@
     position: relative;
     width: 100%;
     margin-bottom: 3rem;
+    perspective: 2000px;
 
     &__top{
         @include flex-row{
@@ -19,6 +20,15 @@
         @include button{
             padding: $small-space/2;
             width: 4rem;
+            transition: all .5s ease-in;
+            box-shadow: 
+                12px 12px 20px 0 rgba(0, 0, 0, 0.25),
+                -8px -10px 15px 0 #ffffff73;
+            
+        }
+        &:hover{
+            background-color: #f4a60d;
+            transform: rotateX(20deg) rotateY(0deg);
         }
     }
 
