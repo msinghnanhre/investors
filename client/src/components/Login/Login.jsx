@@ -6,7 +6,7 @@ import Lottie from 'react-lottie';
 import logo from "../../assets/icons/logo2.svg"
 import { motion } from "framer-motion";
 
-const API_URL = 'http://localhost:8080'
+const API_URL = 'https://crypto-investors.herokuapp.com'
 
 function Login() {
     const authLogin = () => {
