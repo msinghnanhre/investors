@@ -1,4 +1,5 @@
 import axios from "axios"
+const url = 'https://crypto-investors.herokuapp.com'
 
 //api to grab data for chart from asset id
 export const getChartData = (id, duration) => {
@@ -54,7 +55,7 @@ export const trending = () => {
 //post new asset to the database
 export const postAsset = (id,data) => {
     return new Promise((resolve, reject) => {
-        axios.post(`http://localhost:8080/api/portfolio/${id}`, { data })
+        axios.post(`${url}/api/portfolio/${id}`, { data })
             .then(res => {
                 resolve(res)
             }).catch(err => {
@@ -67,7 +68,7 @@ export const postAsset = (id,data) => {
 
 export const getPortfolio = (id) => {
     return new Promise((resolve, reject) => {
-        axios.get(`http://localhost:8080/api/portfolio/${id}`)
+        axios.get(`${url}/api/portfolio/${id}`)
             .then(res => {
             resolve(res)
             }).catch(err => {
@@ -80,7 +81,7 @@ export const getPortfolio = (id) => {
 
 export const deleteAsset = (id, assetId) => {
     return new Promise((resolve, reject) => {
-        axios.delete(`http://localhost:8080/api/portfolio/${id}/asset/${assetId}`)
+        axios.delete(`${url}/api/portfolio/${id}/asset/${assetId}`)
             .then(res => {
                 resolve(res)
             }).catch(err => {
@@ -93,7 +94,7 @@ export const deleteAsset = (id, assetId) => {
 //post new asset to the database
 export const postCurrent = (id, data) => {
     return new Promise((resolve, reject) => {
-        axios.post(`http://localhost:8080/api/portfolio/currentValue/${id}`,{ data })
+        axios.post(`${url}/api/portfolio/currentValue/${id}`,{ data })
             .then(res => {
                 resolve(res)
             }).catch(err => {
@@ -106,7 +107,7 @@ export const postCurrent = (id, data) => {
 //post new asset to the database
 export const postSubscription = (id, data) => {
     return new Promise((resolve, reject) => {
-        axios.post(`http://localhost:8080/api/subscription/${id}`, data )
+        axios.post(`${url}/api/subscription/${id}`, data )
             .then(res => {
                 resolve(res)
             }).catch(err => {
