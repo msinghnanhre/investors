@@ -8,7 +8,7 @@
     overflow: hidden;
     &__main{
         position: absolute;
-        top: 20%;
+        top: 15%;
         width: 100%;
         @include tablet{
             @include flex-row{

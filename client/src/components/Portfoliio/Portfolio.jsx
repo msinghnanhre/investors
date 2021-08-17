@@ -4,6 +4,7 @@ import Subscription from "../Subscription/Subscription"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import PortfolioList from "../PortfolioList/PortfolioList"
+import {motion} from "framer-motion"
 
 
 function Portfolio({props, match, currencyList}) {
@@ -21,7 +22,13 @@ function Portfolio({props, match, currencyList}) {
     }
 
     return (
-            <>
+        <motion.div
+            initial={{ x: `-100vw`, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{duration: 0.5}}
+            exit={{ x: `100vw`, transition: { ease: 'easeInOut' } }}
+        
+        >
             <Header path={match} />
                 <PortfolioList
                     userId={id}
@@ -31,7 +38,7 @@ function Portfolio({props, match, currencyList}) {
                 userId={id}
             />
             <Footer />
-            </>
+            </motion.div>
         )
 }
 

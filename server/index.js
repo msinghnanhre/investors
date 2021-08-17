@@ -25,7 +25,6 @@ const authRoutes = require("./routes/authRoutes")
 
 //port
 require("dotenv").config();
-const port = process.env.PORT || 8080
 
 //database
 mongoose.connect('mongodb://localhost:27017', {
@@ -65,7 +64,10 @@ app.get('/api/portfolio/logout', (req, res) => {
 
 app.use('/api', isUserLoggedIn, portfolioRoutes)
 app.use('/auth', authRoutes)
+app.get("/", ((req, res) => {
+    res.status(200).json("Working")
+}))
 
-app.listen(port, () => {
-    console.log(`Listening at port ${port}`)
+app.listen(process.env.PORT || 8080, () => {
+    console.log(`Listening at port ${process.env.PORT}`)
 })

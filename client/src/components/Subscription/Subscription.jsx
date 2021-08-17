@@ -29,7 +29,7 @@ function Subscription({userId}) {
         <div className="subscription">
             <h2 className="subscription__title">Enroll into our Coin AirDrop Program</h2>
             <p className="subscription__body">As our platform user , you get exclusive chance to earn INVESTORS TOKEN. Enroll yourself into our airdrop program to have token
-                credited to youir account when tokens are issued.</p>
+                credited to your account when tokens are issued.</p>
             <form className="subscription__form" onSubmit={submitHandler}>
                 <input
                     className="subscription__email"

@@ -3,9 +3,12 @@ import { useState,useEffect } from "react";
 import Charts from "../Charts/Charts"
 import { coinDetail } from "../../utils/api"
 import Socials from "../Socials/Socials"
+import loading from "../../assets/icons/loading.json"
+import Lottie from 'react-lottie';
 import "./AssetDetail.scss"
 import Footer from "../../components/Footer/Footer"
 import Header from "../../components/Header/Header"
+import { motion } from 'framer-motion';
 
 function AssetDetail({ currencies, match }) {
 
@@ -34,12 +37,30 @@ function AssetDetail({ currencies, match }) {
         })
     }, [])
 
-    console.log(coin)
+
+    const loadingAnimate = {
+        loop: true,
+        autoplay: true,
+        animationData: loading,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    }
+
     if (coin === null) {
-        return <p>Loading ......</p>
+        return (
+            <div className="loading">
+                <Lottie options={loadingAnimate} height={400} width={400} />
+            </div>
+        )
     }
     return (
-        <>
+        <motion.div
+            initial={{ x: `-100vw`, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            exit={{ x: `100vw`, transition: { ease: 'easeInOut' } }}
+        >
             <Header path={match}/>
             <section className="assetDetail">
                 <div className="assetDetail__coin">
@@ -74,7 +95,7 @@ function AssetDetail({ currencies, match }) {
                 />
             </section>
             <Footer />
-        </>
+        </motion.div>
     )
 }
 

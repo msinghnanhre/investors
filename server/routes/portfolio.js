@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const Portfolio = require('../models/Portfolio')
 const SubscriptionModel = require('../models/Subscription')
 
@@ -64,7 +63,7 @@ router.get('/portfolio/:id', (req, res) => {
 
 
 //post current portfolio value to database every five minutes for testing purposes
-// post new asset by Id
+// post new asset by IC#d
 router.post("/portfolio/currentValue/:id", (req, res) => {
     const { current } = req.body.data
     console.log(req.body)

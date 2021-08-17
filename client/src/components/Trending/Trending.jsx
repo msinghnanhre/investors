@@ -18,7 +18,6 @@ function Trending() {
     if (!trendingList) {
         return <p>Loading ...</p>
     }
-    console.log(trendingList)
 
     return (
         <div className="trending">
