@@ -7,7 +7,7 @@ require("dotenv").config();
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:8080/auth/google/login",
+    callbackURL: "https://clever-babbage-e51da0.netlify.app/auth/google/login",
 
 },
     function (_accessToken, _refreshToken, profile, cb){ 

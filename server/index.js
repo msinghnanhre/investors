@@ -27,7 +27,7 @@ const authRoutes = require("./routes/authRoutes")
 require("dotenv").config();
 
 //database
-mongoose.connect('mongodb://localhost:27017', {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
@@ -59,7 +59,7 @@ app.use(passport.session())
 app.get('/api/portfolio/logout', (req, res) => {
     req.logout()
     req.session.destroy()
-    res.redirect(`http://localhost:3000/`)
+    res.redirect(`https://clever-babbage-e51da0.netlify.app/`)
 })
 
 app.use('/api', isUserLoggedIn, portfolioRoutes)
