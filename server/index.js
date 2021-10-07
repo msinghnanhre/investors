@@ -25,9 +25,10 @@ const authRoutes = require("./routes/authRoutes")
 
 //port
 require("dotenv").config();
+const port = process.env.PORT || 8080
 
 //database
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb://localhost:27017', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
@@ -59,15 +60,12 @@ app.use(passport.session())
 app.get('/api/portfolio/logout', (req, res) => {
     req.logout()
     req.session.destroy()
-    res.redirect(`https://clever-babbage-e51da0.netlify.app/`)
+    res.redirect(`http://localhost:3000/`)
 })
 
 app.use('/api', isUserLoggedIn, portfolioRoutes)
 app.use('/auth', authRoutes)
-app.get("/", ((req, res) => {
-    res.status(200).json("Working")
-}))
 
-app.listen(process.env.PORT || 8080, () => {
-    console.log(`Listening at port ${process.env.PORT}`)
+app.listen(port, () => {
+    console.log(`Listening at port ${port}`)
 })
